@@ -1,5 +1,5 @@
 param(
-    [string]$OutputDirectory = "dist"
+    [string]$OutputDirectory = "."
 )
 
 $ErrorActionPreference = "Stop"
@@ -22,7 +22,9 @@ function Get-CscPath {
 $csc = Get-CscPath
 $outputPath = Join-Path $OutputDirectory "ReplayFirewallTool.exe"
 
-New-Item -ItemType Directory -Force -Path $OutputDirectory | Out-Null
+if (-not [string]::IsNullOrWhiteSpace($OutputDirectory) -and -not (Test-Path $OutputDirectory)) {
+    New-Item -ItemType Directory -Force -Path $OutputDirectory | Out-Null
+}
 
 & $csc `
     /nologo `

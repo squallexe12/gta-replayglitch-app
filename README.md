@@ -58,7 +58,7 @@ Run the included PowerShell build script:
 By default, the script writes the build output to:
 
 ```text
-dist\ReplayFirewallTool.exe
+ReplayFirewallTool.exe
 ```
 
 You can also choose a custom output folder:
@@ -72,8 +72,10 @@ You can also choose a custom output folder:
 ```text
 .
 |-- ReplayFirewallTool.cs
+|-- ReplayFirewallTool.exe
 |-- ReplayFirewallTool.ico
 |-- ReplayFirewallTool.manifest
+|-- KULLANIM.txt
 |-- build.ps1
 |-- README.md
 |-- CHANGELOG.md
@@ -86,7 +88,7 @@ You can also choose a custom output folder:
 For a clean GitHub repository:
 
 1. Commit source files, docs, and assets
-2. Do not commit generated `.exe` files
+2. Commit the root-level `ReplayFirewallTool.exe` if you want the binary directly visible in the repository
 3. Publish the compiled `.exe` as a GitHub Release asset
 4. Tag releases with the version from the changelog
 

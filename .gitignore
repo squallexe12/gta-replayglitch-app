@@ -1,11 +1,12 @@
 # Build outputs
 dist/
-*.exe
 *.dll
 *.pdb
 *.obj
 *.tmp
 CSC*.TMP
+*.exe
+!ReplayFirewallTool.exe
 
 # Local helper scripts and exports
 replay-firewall.cmd

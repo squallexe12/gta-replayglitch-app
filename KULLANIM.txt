@@ -1,0 +1,17 @@
+Replay Firewall Tool
+
+Bu uygulama yonetici izni ile acilir.
+
+Butonlar:
+- Kurali Ekle: "GTA 5 REPLAY GLITCH" outbound block rule'unu yoksa ekler.
+- Ac: Rule'u aktif eder.
+- Kapat: Rule'u devre disi birakir.
+- Toggle: Aciksa kapatir, kapaliysa acar.
+- Yenile: Mevcut durumu tekrar okur.
+- Cikis: Uygulamayi kapatir.
+
+Rule detaylari:
+- Rule adi: GTA 5 REPLAY GLITCH
+- Remote IP: 192.81.241.171
+- Yon: Outbound
+- Aksiyon: Block
