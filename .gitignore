@@ -1,0 +1,21 @@
+# Build outputs
+dist/
+*.exe
+*.dll
+*.pdb
+*.obj
+*.tmp
+CSC*.TMP
+
+# Local helper scripts and exports
+replay-firewall.cmd
+replay-rule-control.cmd
+replay.txt
+windows-defender-firewall-with-Advanced-Security-outbound.txt
+
+# OS / editor files
+.DS_Store
+Thumbs.db
+*.user
+*.suo
+*.cache
