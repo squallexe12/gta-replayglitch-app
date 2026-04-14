@@ -21,6 +21,17 @@ function Get-CscPath {
 
 $csc = Get-CscPath
 $outputPath = Join-Path $OutputDirectory "ReplayFirewallTool.exe"
+$sourceFiles = @(
+    "ReplayFirewallTool.cs",
+    "AppModels.cs",
+    "AppText.cs",
+    "AppSettingsStore.cs",
+    "FirewallRuleService.cs",
+    "ToastNotifier.cs",
+    "WizardForm.cs",
+    "MainForm.cs",
+    "Program.cs"
+)
 
 if (-not [string]::IsNullOrWhiteSpace($OutputDirectory) -and -not (Test-Path $OutputDirectory)) {
     New-Item -ItemType Directory -Force -Path $OutputDirectory | Out-Null
@@ -35,7 +46,7 @@ if (-not [string]::IsNullOrWhiteSpace($OutputDirectory) -and -not (Test-Path $Ou
     /reference:System.Windows.Forms.dll `
     /reference:System.Drawing.dll `
     /reference:Microsoft.CSharp.dll `
-    ReplayFirewallTool.cs
+    $sourceFiles
 
 if ($LASTEXITCODE -ne 0) {
     throw "Build failed with exit code $LASTEXITCODE."

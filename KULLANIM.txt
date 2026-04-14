@@ -2,6 +2,13 @@ Replay Firewall Tool
 
 Bu uygulama yonetici izni ile acilir.
 
+Yeni ozellikler:
+- Ilk acilis sihirbazi
+- Turkce / English dil secimi
+- Duruma gore renkli geri bildirim
+- Detay gorunumu
+- Basarili islemlerde kucuk bildirim
+
 Butonlar:
 - Kurali Ekle: "GTA 5 REPLAY GLITCH" outbound block rule'unu yoksa ekler.
 - Ac: Rule'u aktif eder.

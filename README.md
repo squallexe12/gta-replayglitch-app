@@ -1,8 +1,18 @@
 # Replay Firewall Tool
 
-A small Windows desktop utility for managing a specific outbound Windows Defender Firewall rule used in GTA 5 replay-related setups.
+A Windows desktop utility for managing a specific outbound Windows Defender Firewall rule used in GTA 5 replay-related setups.
 
-This app is built as a native Windows `.exe` with a WinForms UI and requires administrator privileges because it reads and updates firewall rules.
+The application is built as a native WinForms `.exe`, includes bilingual UI support, and requires administrator privileges because it reads and updates firewall rules.
+
+## Preview
+
+### Screenshot
+
+![Replay Firewall Tool screenshot](docs/media/screenshot-main.png)
+
+### Quick Preview GIF
+
+![Replay Firewall Tool quick preview](docs/media/demo.gif)
 
 ## What it does
 
@@ -13,6 +23,10 @@ This app is built as a native Windows `.exe` with a WinForms UI and requires adm
 - Disables the rule
 - Toggles the rule state
 - Refreshes the current status
+- Shows a first-run wizard when the rule is missing
+- Explains the rule in a dedicated details view
+- Uses color-coded status feedback for quick understanding
+- Shows small success notifications after actions
 - Supports both English and Turkish from the UI
 
 ## Rule details
@@ -47,6 +61,14 @@ The executable includes an application manifest with `requireAdministrator`, so 
 
 The built executable itself targets the Windows .NET Framework runtime that is normally present on supported Windows systems.
 
+## User experience highlights
+
+- First-run wizard for missing-rule setup
+- Clear status colors for `Missing`, `Disabled`, `Enabled`, and `Mixed`
+- Rule explanation panel so users understand exactly what the tool is doing
+- Success notifications without interrupting flow
+- Language switching from inside the app
+
 ## Build from source
 
 Run the included PowerShell build script:
@@ -80,6 +102,8 @@ You can also choose a custom output folder:
 |-- README.md
 |-- CHANGELOG.md
 |-- LICENSE
+|-- docs/
+|-- .github/
 `-- .gitignore
 ```
 
@@ -89,14 +113,39 @@ For a clean GitHub repository:
 
 1. Commit source files, docs, and assets
 2. Commit the root-level `ReplayFirewallTool.exe` if you want the binary directly visible in the repository
-3. Publish the compiled `.exe` as a GitHub Release asset
+3. Publish the compiled `.exe` and checksum as GitHub Release assets
 4. Tag releases with the version from the changelog
+5. Use the `Added / Changed / Fixed` release note structure
 
-Suggested first public tag:
+Current release tag:
 
 ```text
-v1.1.0
+v1.2.0
 ```
+
+## Release workflow
+
+The repository now includes a GitHub Actions workflow for tagged releases:
+
+- Builds the executable on `windows-latest`
+- Optionally signs the executable if signing secrets are configured
+- Generates a SHA-256 checksum file
+- Packages a release zip
+- Publishes release assets automatically
+
+Workflow file:
+
+- [release.yml](.github/workflows/release.yml)
+
+Release notes template:
+
+- [RELEASE_TEMPLATE.md](.github/RELEASE_TEMPLATE.md)
+
+## Versioning and release discipline
+
+- [Versioning policy](docs/VERSIONING.md)
+- [Code signing guidance](docs/CODE_SIGNING.md)
+- [Changelog](CHANGELOG.md)
 
 ## Security note
 
